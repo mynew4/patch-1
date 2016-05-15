@@ -1,7 +1,11 @@
+-- Deepholm
 -- Hillsbrad Foothills
 -- Northern Stranglethorn
 -- Redridge Mountains
 -- Shimmering Expanse
 -- The Cape of Stranglethorn
+-- The Lost Isles
+-- Tol Barad
+-- Tol Barad Peninsula
 -- Twilight Highlands
 -- Wetlands
