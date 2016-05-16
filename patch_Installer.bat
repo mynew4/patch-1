@@ -25,8 +25,8 @@ echo .
 echo    ````````````$````````$
 echo    ````````````$````````$  *SmartAI Lab scripts*
 echo    $$$```$$$``$$$``$$$``$
-echo    $``$`````$``$``$```$`$$$$$    Cataclysm 4.3.4a Private Version
-echo    $$$```$$$$``$``$`````$```$          for Private ZeXCore Database original
+echo    $``$`````$``$``$```$`$$$$$    Cataclysm 4.3.4a Version
+echo    $$$```$$$$``$``$`````$```$          for ZeXDB original
 echo    $````$```$``$``$```$`$```$         
 echo    $`````$$$$``$$``$$$``$```$ 
 echo.

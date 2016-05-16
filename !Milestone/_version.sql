@@ -1,2 +1,2 @@
-UPDATE `version` SET `db_version`=('ZeXDB 434.07 updates & "patch" SmartAI Lab 434.09 Private');
+UPDATE `version` SET `db_version`=('ZeXDB 434.09 updates & "patch" SmartAI Lab 434.10 "Tarren Mill"');
 

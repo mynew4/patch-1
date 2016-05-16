@@ -1,4 +1,4 @@
-/* Copyright (C) 11 April 2011-2013 patch Project 
+/* Copyright (C) 11 April 2011-2014 patch Project 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
@@ -11,7 +11,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see <http://www.gnu.org/licenses/> 
  *
- * patch Project  Copyright (C) 11 April 2011 patch Project 
+ * patch Project  Copyright (C) 11 April 2011-2014 patch Project 
  * This program comes with ABSOLUTELY NO WARRANTY;
  * This is free software, and you are welcome to redistribute it
  * under certain conditions.
@@ -117,11 +117,11 @@ SET @ENTRY := 49854;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,0,0,100,6,0,0,3400,4700,11,90939,64,0,0,0,0,2,0,0,0,0,0,0,0,'Cast bolt'),
+(@ENTRY,0,0,0,0,0,100,6,0,0,3400,4700,11,90938,64,0,0,0,0,2,0,0,0,0,0,0,0,'Cast bolt'),
 (@ENTRY,0,1,2,2,0,100,7,0,15,0,0,25,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Flee at 15% HP'),
 (@ENTRY,0,2,0,61,0,100,7,0,15,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Say Text at 15% HP'),
-(@ENTRY,0,3,0,16,0,100,6,90947,30,12000,14000,11,90947,0,0,0,0,0,7,0,0,0,0,0,0,0,'Cast Bloodwash on Friendlies'),
-(@ENTRY,0,4,0,0,0,100,6,5000,5000,35000,35000,11,90933,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Ragezone');
+(@ENTRY,0,3,0,16,0,100,6,90947,30,12000,14000,11,90946,0,0,0,0,0,7,0,0,0,0,0,0,0,'Cast Bloodwash on Friendlies'),
+(@ENTRY,0,4,0,0,0,100,6,5000,5000,35000,35000,11,90932,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Ragezone');
 -- NPC talk text insert
 SET @ENTRY := 49854;
 DELETE FROM `creature_text` WHERE `entry`=@ENTRY;
@@ -155,20 +155,18 @@ SET @ENTRY := 49850;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,4,0,100,7,0,0,0,0,11,90931,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Charge on Aggro'),
-(@ENTRY,0,1,0,0,0,100,6,5000,5000,17000,19000,11,90930,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Recklessness'),
-(@ENTRY,0,2,0,2,0,100,6,0,40,8000,11000,11,90925,1,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Bloodbath at 40% HP');
+(@ENTRY,0,0,0,4,0,100,7,0,0,0,0,11,90928,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Charge on Aggro'),
+(@ENTRY,0,1,0,2,0,100,6,0,40,8000,11000,11,90925,1,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Bloodbath at 40% HP');
 
 -- Defias Enforcer
 SET @ENTRY := 48502;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,4,0,100,3,0,0,0,0,11,90928,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Charge on Aggro'),
-(@ENTRY,0,1,0,0,0,100,2,5000,5000,17000,19000,11,90929,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Recklessness'),
-(@ENTRY,0,2,0,2,0,100,6,0,40,8000,11000,11,90925,1,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Bloodbath at 40% HP'),
-(@ENTRY,0,3,0,4,0,100,5,0,0,0,0,11,90931,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Charge on Aggro'),
-(@ENTRY,0,4,0,0,0,100,4,5000,5000,17000,19000,11,90930,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Recklessness');
+(@ENTRY,0,0,0,4,0,100,7,0,0,0,0,11,90928,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Charge on Aggro'),
+(@ENTRY,0,1,0,0,0,100,6,5000,5000,17000,19000,11,90929,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Recklessness'),
+(@ENTRY,0,2,0,2,0,100,6,0,40,8000,11000,11,90925,1,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Bloodbath at 40% HP');
+
 
 -- Defias Miner
 SET @ENTRY := 48419;
@@ -274,23 +272,17 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,1,0,0,0,100,2,8000,8000,14000,15000,11,90956,0,0,0,0,0,5,0,0,0,0,0,0,0,'Cast Shadowstep'),
 (@ENTRY,0,2,0,0,0,100,2,2000,3000,9000,11000,11,90951,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Sinister Strike'),
 (@ENTRY,0,3,0,0,0,100,2,12000,14000,24000,28000,11,90960,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Whirling Blades'),
-(@ENTRY,0,4,0,11,0,100,3,0,0,0,0,11,90954,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Camouflage on Spawn'),
-(@ENTRY,0,5,0,2,0,100,2,0,50,15000,18000,11,90959,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Evasion at 50% HP'),
-(@ENTRY,0,6,0,0,0,100,2,8000,8000,14000,15000,11,90957,0,0,0,0,0,5,0,0,0,0,0,0,0,'Cast Shadowstep'),
-(@ENTRY,0,7,0,0,0,100,2,2000,3000,9000,11000,11,90952,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Sinister Strike'),
-(@ENTRY,0,8,0,0,0,100,2,12000,14000,24000,28000,11,90961,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Whirling Blades'),
-(@ENTRY,0,9,0,11,0,100,3,0,0,0,0,11,90955,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Camouflage on Spawn');
+(@ENTRY,0,4,0,11,0,100,3,0,0,0,0,11,90954,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Camouflage on Spawn');
 
 -- Defias Shadowguard
 SET @ENTRY := 49852;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,2,0,100,2,0,50,15000,18000,11,90959,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Evasion at 50% HP'),
-(@ENTRY,0,1,0,0,0,100,2,8000,8000,14000,15000,11,90957,0,0,0,0,0,5,0,0,0,0,0,0,0,'Cast Shadowstep'),
-(@ENTRY,0,2,0,0,0,100,2,2000,3000,9000,11000,11,90952,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Sinister Strike'),
-(@ENTRY,0,3,0,0,0,100,2,12000,14000,24000,28000,11,90961,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Whirling Blades'),
-(@ENTRY,0,4,0,11,0,100,3,0,0,0,0,11,90955,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Camouflage on Spawn');
+(@ENTRY,0,0,0,2,0,100,6,0,50,15000,18000,11,90958,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Evasion at 50% HP'),
+(@ENTRY,0,1,0,0,0,100,6,8000,8000,14000,15000,11,90956,0,0,0,0,0,5,0,0,0,0,0,0,0,'Cast Shadowstep'),
+(@ENTRY,0,2,0,0,0,100,6,2000,3000,9000,11000,11,90951,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Sinister Strike'),
+(@ENTRY,0,3,0,0,0,100,6,12000,14000,24000,28000,11,90960,0,0,0,0,0,1,0,0,0,0,0,0,0,'Cast Whirling Blades');
 
 -- Goblin Overseer
 SET @ENTRY := 48279;
@@ -438,10 +430,8 @@ SET @ENTRY := 48451;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,0,0,100,2,4000,4900,9000,12000,11,90913,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
-(@ENTRY,0,1,0,0,0,100,2,7000,9000,16000,19000,11,90920,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck'),
-(@ENTRY,0,2,0,0,0,100,4,4000,4900,9000,12000,11,90918,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
-(@ENTRY,0,3,0,0,0,100,4,7000,9000,16000,19000,11,90921,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck');
+(@ENTRY,0,0,0,0,0,100,6,4000,4900,9000,12000,11,90913,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
+(@ENTRY,0,1,0,0,0,100,6,7000,9000,16000,19000,11,90920,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck');
 
 -- Skeletal Miner
 SET @ENTRY := 623;
@@ -462,10 +452,8 @@ SET @ENTRY := 48450;
 UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
 DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,0,0,100,2,4000,4900,9000,12000,11,90913,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
-(@ENTRY,0,1,0,0,0,100,2,7000,9000,16000,19000,11,90920,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck'),
-(@ENTRY,0,2,0,0,0,100,4,4000,4900,9000,12000,11,90918,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
-(@ENTRY,0,3,0,0,0,100,4,7000,9000,16000,19000,11,90921,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck');
+(@ENTRY,0,0,0,0,0,100,6,4000,4900,9000,12000,11,90913,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Gouge'),
+(@ENTRY,0,1,0,0,0,100,6,7000,9000,16000,19000,11,90920,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Eye Peck');
 
 -- Undead Dynamiter
 SET @ENTRY := 625;
