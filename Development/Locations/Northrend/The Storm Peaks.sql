@@ -783,12 +783,20 @@ INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type
 (@ENTRY,0,0,0,9,0,100,0,8,30,12000,16000,11,57488,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Squall on Close');
 
 -- Victorious Challenger
-SET @ENTRY := 30012;
-UPDATE `creature_template` SET `AIName`='SmartAI' WHERE `entry`=@ENTRY;
-DELETE FROM `smart_scripts` WHERE `source_type`=0 AND `entryorguid`=@ENTRY;
+SET @NPC_CHALLENGER      := 30012; -- Victorious Challenger
+SET @GOSSIP_MENUID       := 9865;
+SET @SPELL_SUNDER        := 11971; -- Sunder Armor
+SET @SPELL_REND          := 11977; -- Rend
+DELETE FROM `smart_scripts` WHERE (`source_type`=0 AND `entryorguid`=@NPC_CHALLENGER) OR (`source_type`=9 AND `entryorguid`=@NPC_CHALLENGER*100);
 INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES
-(@ENTRY,0,0,0,9,0,100,0,0,5,5000,9000,11,11971,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Sunder Armor on Close'),
-(@ENTRY,0,1,0,0,0,100,0,9000,12000,17000,22000,11,11977,0,0,0,0,0,2,0,0,0,0,0,0,0,'Cast Rend');
+(@NPC_CHALLENGER,0,0,0,25,0,100,0,0,0,0,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Victorious Challenger - On Reset - Set Default Faction'),
+(@NPC_CHALLENGER,0,1,2,62,0,100,0,@GOSSIP_MENUID,0,0,0,72,0,0,0,0,0,0,7,0,0,0,0,0,0,0,'Victorious Challenger - On Gossip - Close Gossip'),
+(@NPC_CHALLENGER,0,2,0,61,0,100,0,0,0,0,0,80,@NPC_CHALLENGER*100,0,0,0,0,0,1,0,0,0,0,0,0,0,'Victorious Challenger - On Gossip - Run Timed Script'),
+(@NPC_CHALLENGER,0,3,0,9,0,100,0,0,5,5000,10000,11,@SPELL_SUNDER,0,0,0,0,0,2,0,0,0,0,0,0,0,'Victorious Challenger - On Range - Cast Sunder Armor'),
+(@NPC_CHALLENGER,0,4,0,0,0,100,0,10000,15000,15000,20000,11,@SPELL_REND,0,0,0,0,0,2,0,0,0,0,0,0,0,'Victorious Challenger - IC - Cast Rend'),
+(@NPC_CHALLENGER*100,9,0,0,0,0,100,0,1000,1000,1000,1000,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,'Victorious Challenger - Timed - Talk'),
+(@NPC_CHALLENGER*100,9,1,0,0,0,100,0,3000,3000,3000,3000,2,14,0,0,0,0,0,1,0,0,0,0,0,0,0,'Victorious Challenger - Timed - Set Faction Hostile'),
+(@NPC_CHALLENGER*100,9,2,0,0,0,100,0,0,0,0,0,49,0,0,0,0,0,0,7,0,0,0,0,0,0,0,'Victorious Challenger - Timed - Attack Invoker');
 
 -- Valduran the Stormborn
 SET @ENTRY := 29368;
